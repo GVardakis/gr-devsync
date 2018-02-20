@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<block>
+  <name>rms_normalization</name>
+  <key>devsync_rms_normalization</key>
+  <category>[devsync]</category>
+  <import>import devsync</import>
+  <make>devsync.rms_normalization($num_streams, $vlen)</make>
+  <param>
+		<name>Num Streams</name>
+		<key>num_streams</key>
+		<value>2</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Vec Length</name>
+		<key>vlen</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+		<vlen>$vlen</vlen>
+		<nports>$num_streams</nports>
+	</sink>
+	<source>
+    	<name>out</name>
+		<type>complex</type>
+		<vlen>$vlen</vlen>
+		<nports>$num_streams</nports>
+  	</source>
+</block>

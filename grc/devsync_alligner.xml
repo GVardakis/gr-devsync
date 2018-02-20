@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<block>
+  <name>alligner</name>
+  <key>devsync_alligner</key>
+  <category>[devsync]</category>
+  <import>import devsync</import>
+  <make>devsync.alligner($num_streams)</make>
+   <param>
+    <name>Number of streams</name>
+    <key>num_streams</key>
+    <type>int</type>
+  </param>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+		<nports>$num_streams</nports>
+	</sink>
+	<sink>
+		<name>phase_init</name>
+		<type>message</type>
+	</sink>
+	<source>
+    	<name>out</name>
+		<type>complex</type>
+		<nports>$num_streams</nports>
+  	</source>
+</block>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<block>
+  <name>peak_detector</name>
+  <key>devsync_peak_detector</key>
+  <category>[devsync]</category>
+  <import>import devsync</import>
+  <make>devsync.peak_detector($num_streams, $win, $scale, $inf, $disc_samp)</make>
+  	<param>
+		<name>Num Streams</name>
+		<key>num_streams</key>
+		<value>2</value>
+		<type>int</type>
+ 	</param>
+ 	<param>
+		<name>Window</name>
+		<key>win</key>
+		<value>100</value>
+		<type>int</type>
+    </param>
+    <param>
+		<name>Discarted Samples</name>
+		<key>disc_samp</key>
+		<value>100</value>
+		<type>int</type>
+    </param>
+ 	<param>
+		<name>Scale</name>
+		<key>scale</key>
+		<value>1</value>
+		<type>float</type>
+    </param>
+     <param>
+		<name>Influence</name>
+		<key>inf</key>
+		<value>0</value>
+		<type>float</type>
+    </param>
+    <sink>
+    	<name>in</name>
+    	<type>complex</type>
+		<nports>$num_streams</nports>
+    </sink>
+    <source>
+    	<name>shifts_out</name>
+		<type>message</type>
+  	</source>
+</block>
