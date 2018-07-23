@@ -48,5 +48,5 @@ typedef enum{
   FIRST_SYNCING=8
 }overall_state;
 
-#define ENABLE_DEBUG_MSG = 1
+#define ENABLE_DEBUG_MSG 1
 #endif /* INCLUDED_DEVSYNC_API_H */
