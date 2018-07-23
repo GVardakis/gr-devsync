@@ -181,9 +181,6 @@ namespace gr
           if ((curr_sample > 0.0001)
               && std::abs (curr_sample - avgFilter[stream])
                   > d_scale * filteredY[stream][prev_index]) {
-             LOG_DEBUG("Abs value %f thresh %f \n",
-                    std::abs (curr_sample - avgFilter[stream]),
-                    d_threshold * filteredY[stream][prev_index]);
             if (curr_sample > avgFilter[stream]) {
               if (curr_sample > d_max_abs_sample[stream]) {
                 d_max_sample[stream] = in[i];
